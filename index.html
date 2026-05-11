@@ -21,9 +21,9 @@
   --faint:       #9a9690;
   --border:      #ddd9d3;
   --border-hi:   #c8c3bc;
-  --teal:        #085D63;
-  --teal-light:  #e6f3f4;
-  --teal-mid:    #0a7a82;
+  --teal:        #3ab5bb;
+  --teal-light:  #e8f7f8;
+  --teal-mid:    #2a9fa5;
   --toggle-bg:   #e8e4de;
 }
 
@@ -170,34 +170,6 @@ body {
   animation: up .5s ease .3s forwards;
 }
 
-.cover-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-  opacity: 0;
-  animation: up .5s ease .4s forwards;
-}
-
-.meta-tag {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 5px 13px;
-  background: var(--bg);
-  transition: background .3s, border-color .3s, color .3s;
-}
-
-.meta-tag-teal {
-  color: var(--teal);
-  border-color: rgba(8,93,99,.25);
-  background: var(--teal-light);
-}
-
-[data-theme="dark"] .meta-tag-teal {
-  border-color: rgba(77,184,190,.3);
-}
 
 /* ─── PROGRESS ─── */
 .prog {
@@ -410,8 +382,10 @@ body {
 }
 
 /* ─── TYPE COLOURS ─── */
-.type-venue    .rail-dot { background: var(--border-hi); }
-.type-venue    .c-type   { color: var(--faint); }
+.type-venue    .rail-dot { background: var(--teal); }
+.type-venue    .c-type   { color: var(--teal); }
+.type-venue    .card     { background: var(--teal-light); border-color: rgba(8,93,99,.2); }
+[data-theme="dark"] .type-venue .card { border-color: rgba(77,184,190,.25); }
 
 .type-welcome  .rail-dot { background: var(--teal); }
 .type-welcome  .c-type   { color: var(--teal); }
@@ -490,11 +464,7 @@ body {
   <div class="cover-inner">
     <div class="cover-kicker"><span class="kicker-dot"></span>Adelaide 2026</div>
     <div class="cover-title">Signal Not Noise</div>
-    <div class="cover-body">Your guide to the day. Tap any session to learn more about the speaker and what they are bringing to the room.</div>
-    <div class="cover-meta">
-      <span class="meta-tag meta-tag-teal">Torrens University</span>
-      <span class="meta-tag">Supported by Aplo</span>
-    </div>
+    <div class="cover-body">Your guide to the day. Tap a session for speaker details and key takeaways.</div>
   </div>
 </div>
 
@@ -521,7 +491,7 @@ body {
           <div><div class="c-type">Venue</div><div class="c-name">Torrens University</div><div class="c-role">Adelaide city campus</div></div>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
-        <div class="c-detail"><div class="detail-rule"></div>Head to the main event space and look for the Aplo team to collect your guest pass and get settled before the day kicks off.</div>
+        <div class="c-detail"><div class="detail-rule"></div>Find the main event space. The Aplo team will be there — grab your pass and get settled before the day kicks off.</div>
       </div>
     </div>
 
@@ -533,10 +503,10 @@ body {
       </div>
       <div class="card" onclick="tog(this)">
         <div class="card-top">
-          <div><div class="c-type">Welcome</div><div class="c-name">Welcome to the day</div></div>
+          <div><div class="c-type">Welcome</div><div class="c-name">Here we go</div></div>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
-        <div class="c-detail"><div class="detail-rule"></div>Introduction to Signal Not Noise — what we are here to explore, who is in the room, and how the day will run. Grab a coffee and say hello to someone new.</div>
+        <div class="c-detail"><div class="detail-rule"></div>Before the first session, a quick read of the room. Who is here, what we are here to do, and how the day will unfold. Grab a coffee and say hello to someone new.</div>
       </div>
     </div>
 
@@ -578,7 +548,7 @@ body {
             <div class="card-top">
               <div>
                 <div class="c-type">Spotlight Interview</div>
-                <div class="c-name">Gek Peng Tay (GP)</div>
+                <div class="c-name">Gek Peng Tay (gp)</div>
                 <div class="c-talk">Cleared for Takeoff</div>
                 <div class="c-role">Founder, RAiD · Chief Digital Officer, Republic of Singapore Air Force</div>
               </div>
@@ -586,7 +556,7 @@ body {
             </div>
           </div>
         </div>
-        <div class="c-detail"><div class="detail-rule"></div>When the stakes are national security, slow technology is not a backlog issue — it is a vulnerability. GP founded RAiD, Singapore's first military tech startup, and spent 30 years leading change inside one of the highest-stakes environments on the planet. Recognised as a Global Top 100 Innovator in Data and Analytics, GP joins us for a live interview with Aplo CEO Maria Raymond. Come for the story. Leave with the courage to rethink your own transformation.</div>
+        <div class="c-detail"><div class="detail-rule"></div>When the stakes are national security, slow technology is not a backlog issue — it is a vulnerability. gp founded RAiD, Singapore's first military tech startup, and spent 30 years leading change inside one of the highest-stakes environments on the planet. Recognised as a Global Top 100 Innovator in Data and Analytics, gp joins us for a live interview with Aplo CEO Maria Raymond. Come for the story. Leave with the courage to rethink your own transformation.</div>
       </div>
     </div>
 
@@ -668,7 +638,7 @@ body {
             <div class="card-top">
               <div>
                 <div class="c-type">Workshop</div>
-                <div class="c-name">Ryan &amp; Ant</div>
+                <div class="c-name">Ryan &amp; Anton</div>
                 <div class="c-talk">Build the Vibe</div>
                 <div class="c-role">Senior Consultant, Aplo</div>
               </div>
@@ -676,7 +646,7 @@ body {
             </div>
           </div>
         </div>
-        <div class="c-detail"><div class="detail-rule"></div>You do not need to know how to code. You do not even need a laptop. Ryan and Anton build live on screen — but the room is in control. The audience picks what to build, writes the prompts, predicts what happens and diagnoses what breaks. You are not watching a demo. You are running one. Participatory, beginner-friendly, and genuinely surprising. Curiosity is the only prerequisite.</div>
+        <div class="c-detail"><div class="detail-rule"></div>You do not need to know how to code. You do not even need a laptop. Ryan and Anton build live on screen — but the room is in control. The audience picks what to build, writes the prompts, predicts what happens and diagnoses what breaks. You are not watching a demo. You are running one. No experience needed. Just curiosity.</div>
       </div>
     </div>
 
@@ -766,7 +736,7 @@ body {
             </div>
           </div>
         </div>
-        <div class="c-detail"><div class="detail-rule"></div>We set the intention. We build the plan. We really mean it this time. So why do so many good commitments fall apart? Gareth is an Ironman athlete, agile coach and author who has spent decades at the intersection of endurance sport and organisational leadership. Most commitments do not fail because people lack motivation — they fail earlier, at the point of decision. His keynote introduces the Ishi Spiral, a practical framework for governing intent. Turns out the Ironman and the boardroom have more in common than you would think.</div>
+        <div class="c-detail"><div class="detail-rule"></div>We set the intention. We build the plan. We really mean it this time. So why do so many good commitments fall apart? Gareth is an Ironman athlete, agile coach and author who has spent decades at the intersection of endurance sport and organisational leadership. Most commitments do not fail because people lack motivation — they fail earlier, at the point of decision. His keynote introduces the Ishi Spiral, a practical framework for governing intent. Turns out the Ironman and the boardroom have more in common than you think.</div>
       </div>
     </div>
 
